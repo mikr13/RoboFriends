@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../component-styles/ScrollComponentStyle.css';
+import '../../component-styles/ScrollComponentStyle.css';
 
 
 const Scroll = (props) => {

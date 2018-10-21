@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 
 import '../component-styles/MainComponentStyle.css';
 
-import Search from './SearchComponent';
-import Card from './CardComponent';
-import Scroll from './ScrollComponent';
+import Search from './functional-components/SearchComponent';
+import Card from './functional-components/CardComponent';
+import Scroll from './functional-components/ScrollComponent';
 
 class Main extends Component {
 
@@ -29,21 +29,26 @@ class Main extends Component {
     }
 
     render() {
-        const filterRobots = this.state.robots.filter(robots => {
-            return robots.name.toLowerCase().includes(this.state.search.toLowerCase());
+
+        // Making this.state constants so that we don't have to right this.state again and again
+        const { robots, loading, search, title } = this.state;
+        // Now removing every this.state
+
+        const filterRobots = robots.filter(robot => {
+            return robot.name.toLowerCase().includes(search.toLowerCase());
         });
 
-        if(this.state.robots.length === 0) {
+        if(!robots.length) {
             return (
-                <div className="pa3">
-                    <h1 className="tc f-subheadline lh-copy">{this.state.title}</h1>
-                    <h1 className="tc f3 mt6 pa4">{this.state.loading}</h1>
+                <div className="pa2">
+                    <h1 className="tc f-subheadline lh-copy">{title}</h1>
+                    <h1 className="tc f3 mt6 pa4">{loading}</h1>
                 </div>
             )
         } else {
             return (
-                <div className="pa3">
-                    <h1 className="tc f2 lh-copy">{this.state.title}</h1>
+                <div className="pa2">
+                    <h1 className="tc f2 lh-copy">{title}</h1>
                     <Search searchChange={this.onSearchChange} />
                     <Scroll>
                         <Card robots={filterRobots} />
