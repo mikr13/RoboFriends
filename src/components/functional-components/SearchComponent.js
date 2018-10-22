@@ -2,7 +2,7 @@ import React from 'react';
 
 // import '../../component-styles/SearchComponentStyle.css';
 
-const Search = ({ searchField, searchChange}) => {
+const Search = ({ searchChange }) => {
 
     return (
         <div className="tc pa2">
