@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import '../../component-styles/SearchComponentStyle.css';
+import '../../component-styles/SearchComponentStyle.css';
 
 const Search = ({ searchChange }) => {
 

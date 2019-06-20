@@ -10,9 +10,9 @@ const rootReducer = combineReducers({ searchARobot, requestRobotsReducer });
 
 export const ConfigureStore = () => {
     const store = createStore(
-        rootReducer, // our reduce
+        rootReducer, // our root reducer
         applyMiddleware(logger, thunkMiddleware)
     );
 
     return store;
-}
+};

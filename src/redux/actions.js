@@ -15,5 +15,5 @@ export const requestRobots = () => (dispath) => {
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
         .then(data => dispath({ type: requestRobots_Success, payload: data }))
-        .catch(error => dispath({ type: requestRobots_Failed, payload: error }))
+        .catch(error => dispath({ type: requestRobots_Failed, payload: error }));
 };

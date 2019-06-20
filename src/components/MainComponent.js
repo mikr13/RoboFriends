@@ -16,15 +16,15 @@ const mapStateToProps = state => {
         robots: state.requestRobotsReducer.robots,
         isPending: state.requestRobotsReducer.isPending,
         error: state.requestRobotsReducer.error
-    }
-}
+    };
+};
 
 const mapDispatchToProps = dispatch => {
     return {
         onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
         onRequestRobots: () => dispatch(requestRobots())
-    }
-}
+    };
+};
 
 class Main extends Component {
 

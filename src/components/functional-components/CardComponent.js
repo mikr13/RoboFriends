@@ -11,6 +11,7 @@ const Card = (props) => {
                 <div>
                     <h2>{(robot.name).slice(0, 20)}</h2>
                     <p>{robot.email}</p>
+                    <p><b>{robot.username}</b></p>
                 </div>
             </div>
         );
