@@ -52,7 +52,7 @@ const Card = props => {
           {robots}
         </div>
         {robots.length ? (
-          <Route exact path="/Robot/:robotID"
+          <Route path="/RoboFriends/Robot/:robotID"
             component={() => (
               <CardDetail
                 robots={props.robots}
@@ -62,9 +62,9 @@ const Card = props => {
             )}
           />
         ) : (
-          <Redirect from="/Robot/:robotID" to="/" />
+          <Redirect from="/RoboFriends/Robot/:robotID" to="/RoboFriends/" />
         )}
-        <Redirect exact from="/Robot" to="/" />
+        <Route component={Card}/>
       </Router>
     </div>
   );
