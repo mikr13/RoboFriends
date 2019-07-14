@@ -44,7 +44,7 @@ class Main extends Component {
   render() {
     const { loading, title } = this.state;
 
-    const { robots, search, onSearchChange, isPending } = this.props;
+    const { robots, search, onSearchChange, isPending, error } = this.props;
 
     const filterRobots = robots.filter(robot => {
       return robot.name.toLowerCase().includes(search.toLowerCase());
@@ -55,6 +55,14 @@ class Main extends Component {
         <div className="pa2">
           <Header isPending={isPending} title={title} />
           <h1 className="tc f3 mt6 pa4">{loading}</h1>
+        </div>
+      );
+    } else if (error) {
+      return (
+        <div className="pa2">
+          <Header isPending={isPending} title={title} />
+          <Search style={{pointerEvent: 'none', opacity: '0.5'}} />
+          <h1 className="tc f3 mt6 pa6">There's no fun in being offline, come online and make some RoboFriends!</h1>
         </div>
       );
     } else {
