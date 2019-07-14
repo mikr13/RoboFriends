@@ -12,9 +12,6 @@
     "precache-manifest.edee9d2926838d7c968a7d29492dd350.js": "/RoboFriends/precache-manifest.edee9d2926838d7c968a7d29492dd350.js",
     "service-worker.js": "/RoboFriends/service-worker.js",
     "static/css/2.31dafeb2.chunk.css.map": "/RoboFriends/static/css/2.31dafeb2.chunk.css.map",
-    "static/css/main.7b70a1c4.chunk.css.map": "/RoboFriends/static/css/main.7b70a1c4.chunk.css.map",
-    "favicon.ico": "/RoboFriends/favicon.ico",
-    "users": "https://jsonplaceholder.typicode.com/users",
-    "1?size=300x300&.*": "https://robohash.org/1?size=300x300&.*"
+    "static/css/main.7b70a1c4.chunk.css.map": "/RoboFriends/static/css/main.7b70a1c4.chunk.css.map"
   }
 }
