@@ -20,6 +20,6 @@
   ],
   "start_url": "https://mikr13.github.io/RoboFriends/",
   "display": "standalone",
-  "theme_color": "#10eb85",
+  "theme_color": "#000000",
   "background_color": "#ffffff"
 }
