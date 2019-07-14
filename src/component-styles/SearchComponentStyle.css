@@ -11,3 +11,7 @@ div {
     -ms-transform: scale(1.05);
     -o-transform: scale(1.05);
 }
+
+#searchrobotlabel {
+    display: none;
+}

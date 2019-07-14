@@ -6,9 +6,11 @@ const Search = ({ searchChange }) => {
 
     return (
         <div className="tc pa2">
+            <label for="searchrobot" id="searchrobotlabel">SearchRobot</label>
             <input 
                 className="pa3 mb4 br-pill ba b--light-green bg-washed-green" 
-                type="search" 
+                type="search"
+                id="searchrobot"
                 name="searchrobot" 
                 placeholder="search a cool robot" 
                 onChange={searchChange}/>
