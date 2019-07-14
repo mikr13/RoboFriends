@@ -1,6 +1,7 @@
 import React from "react";
 
 const Card = props => {
+  const number = Math.floor(Math.random() * 3) + 1;
   const robots = props.robots.map(robot => {
     return (
       <div
@@ -10,7 +11,7 @@ const Card = props => {
         <img
           className="w-100"
           alt={robot.name}
-          src={`https://robohash.org/${robot.id}?200x200`}
+          src={`https://robohash.org/${robot.id}?size=300x300&set=set${number}`}
         />
         <div>
           <h2>{robot.name.slice(0, 20)}</h2>

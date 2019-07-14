@@ -6,9 +6,10 @@ const Search = ({ searchChange }) => {
 
     return (
         <div className="tc pa2">
-            <label for="searchrobot" className="visuallyhidden">SearchRobot</label>
+            <label htmlFor="searchrobot" className="visuallyhidden">SearchRobot</label>
             <input 
-                className="pa3 mb4 br-pill ba b--light-green bg-washed-green" 
+                className="pa3 mb4 br-pill ba b--light-green bg-washed-green"
+                aria-label="searchrobot"
                 type="search"
                 id="searchrobot"
                 name="searchrobot" 
