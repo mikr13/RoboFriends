@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Nova+Mono');
+@font-face {
+  font-family: 'Nova Mono';
+  font-style: normal;
+  src: local('NovaMono'), url(https://fonts.gstatic.com/s/novamono/v9/Cn-0JtiGWQ5Ajb--MRKvZ2ZZ.woff2) format('woff2');
+}
 
 body {
   margin: 0;
