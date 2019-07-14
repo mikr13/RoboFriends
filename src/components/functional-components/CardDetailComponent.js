@@ -1,6 +1,11 @@
 import React from "react";
+import { Redirect } from 'react-router-dom';
 
-const CardDetail = ({ robots, choice, number }) => {
+const CardDetail = ({match, number, robots}) => {
+  if (!robots.length) {
+    return <Redirect to={'/'}/>
+  }
+  let choice = match.params.robotID;
   if (choice > 0 && choice < 11) {
     let robot = robots[choice - 1];
     return (

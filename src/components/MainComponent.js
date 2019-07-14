@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import {
+  BrowserRouter as Router,
+  Route
+} from "react-router-dom";
 
 import { setSearchField, requestRobots } from "../redux/actions";
 
@@ -10,6 +14,7 @@ import Search from "./functional-components/SearchComponent";
 import Card from "./functional-components/CardComponent";
 import Scroll from "./functional-components/ScrollComponent";
 import Header from "./functional-components/HeaderComponent";
+import CardDetail from "./functional-components/CardDetailComponent";
 
 const mapStateToProps = state => {
   return {
@@ -32,14 +37,14 @@ class Main extends Component {
     super();
     this.state = {
       title: "Welcome to RoboFriends",
-      loading: "Waiting for all the cool robots to come here...."
+      loading: "Waiting for all the cool robots to come here....",
+      number: Math.floor(Math.random() * 3) + 1
     };
   }
 
   componentDidMount() {
     this.props.onRequestRobots();
   }
-
 
   render() {
     const { loading, title } = this.state;
@@ -61,8 +66,11 @@ class Main extends Component {
       return (
         <div className="pa2">
           <Header isPending={isPending} title={title} />
-          <Search style={{pointerEvent: 'none', opacity: '0.5'}} />
-          <h1 className="tc f3 mt6 pa6">There's no fun in being offline, come online and make some RoboFriends!</h1>
+          <Search style={{ pointerEvent: "none", opacity: "0.5" }} />
+          <h1 className="tc f3 mt6 pa6">
+            There's no fun in being offline, come online and make some
+            RoboFriends!
+          </h1>
         </div>
       );
     } else {
@@ -72,7 +80,10 @@ class Main extends Component {
             <Header isPending={isPending} title={title} />
             <Search searchChange={onSearchChange} />
             <Scroll>
-              <Card robots={filterRobots} />
+              <Router>
+                <Route path="/" render={props => <Card {...props} robots={filterRobots} number={this.state.number} />} />
+                <Route path="/Robot/:robotID" render={props => <CardDetail {...props} robots={filterRobots} number={this.state.number}/>} />
+              </Router>
             </Scroll>
           </ErrorBoundary>
         </div>
