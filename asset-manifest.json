@@ -14,7 +14,6 @@
     "static/css/2.31dafeb2.chunk.css.map": "/RoboFriends/static/css/2.31dafeb2.chunk.css.map",
     "static/css/main.7b70a1c4.chunk.css.map": "/RoboFriends/static/css/main.7b70a1c4.chunk.css.map",
     "favicon.ico": "/RoboFriends/favicon.ico",
-    "users": "https://jsonplaceholder.typicode.com/users",
-    "https://robohash.org/.*": "https://robohash.org/.*"
+    "users": "https://jsonplaceholder.typicode.com/users"
   }
 }
