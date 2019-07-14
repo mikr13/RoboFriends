@@ -13,17 +13,7 @@
     "service-worker.js": "/RoboFriends/service-worker.js",
     "static/css/2.31dafeb2.chunk.css.map": "/RoboFriends/static/css/2.31dafeb2.chunk.css.map",
     "static/css/main.7b70a1c4.chunk.css.map": "/RoboFriends/static/css/main.7b70a1c4.chunk.css.map",
-    "favicon.ico": "RoboFriends/favicon.ico",
-    "robohash_1": "https://robohash.org/1?(.*?)",
-    "robohash_2": "https://robohash.org/2?(.*?)",
-    "robohash_3": "https://robohash.org/3?(.*?)",
-    "robohash_4": "https://robohash.org/4?(.*?)",
-    "robohash_5": "https://robohash.org/5?(.*?)",
-    "robohash_6": "https://robohash.org/6?(.*?)",
-    "robohash_7": "https://robohash.org/7?(.*?)",
-    "robohash_8": "https://robohash.org/8?(.*?)",
-    "robohash_9": "https://robohash.org/9?(.*?)",
-    "robohash_10": "https://robohash.org/10?(.*?)",
+    "favicon.ico": "/RoboFriends/favicon.ico",
     "users": "https://jsonplaceholder.typicode.com/users"
   }
 }
