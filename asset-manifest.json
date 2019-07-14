@@ -12,6 +12,7 @@
     "precache-manifest.436eb87d8877224fd25a6aee04c58e2a.js": "/RoboFriends/precache-manifest.436eb87d8877224fd25a6aee04c58e2a.js",
     "service-worker.js": "/RoboFriends/service-worker.js",
     "static/css/2.31dafeb2.chunk.css.map": "/RoboFriends/static/css/2.31dafeb2.chunk.css.map",
-    "static/css/main.7b70a1c4.chunk.css.map": "/RoboFriends/static/css/main.7b70a1c4.chunk.css.map"
+    "static/css/main.7b70a1c4.chunk.css.map": "/RoboFriends/static/css/main.7b70a1c4.chunk.css.map",
+    "favicon.ico": "/RoboFriends/favicon.ico"
   }
 }
