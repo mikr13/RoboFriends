@@ -1,5 +1,6 @@
 div.scroll {
     overflow-y: scroll;
+    overflow-x: hidden;
     border: 0.5px solid rgba(14, 241, 14, 0.185);
     height: 69vh;
     padding: 10px 5px;
