@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/RoboFriends/static/css/main.3f0a0264.chunk.css",
+    "main.css": "/RoboFriends/static/css/main.96bfff51.chunk.css",
     "main.js": "/RoboFriends/static/js/main.618dedec.chunk.js",
     "main.js.map": "/RoboFriends/static/js/main.618dedec.chunk.js.map",
     "runtime~main.js": "/RoboFriends/static/js/runtime~main.19bee101.js",
@@ -9,9 +9,9 @@
     "static/js/2.2d209c55.chunk.js": "/RoboFriends/static/js/2.2d209c55.chunk.js",
     "static/js/2.2d209c55.chunk.js.map": "/RoboFriends/static/js/2.2d209c55.chunk.js.map",
     "index.html": "/RoboFriends/index.html",
-    "precache-manifest.6516a2734198d1eec4e491aadc1e3a95.js": "/RoboFriends/precache-manifest.6516a2734198d1eec4e491aadc1e3a95.js",
+    "precache-manifest.1987bf1b19caa34c410a37ba0bb95a7d.js": "/RoboFriends/precache-manifest.1987bf1b19caa34c410a37ba0bb95a7d.js",
     "service-worker.js": "/RoboFriends/service-worker.js",
     "static/css/2.31dafeb2.chunk.css.map": "/RoboFriends/static/css/2.31dafeb2.chunk.css.map",
-    "static/css/main.3f0a0264.chunk.css.map": "/RoboFriends/static/css/main.3f0a0264.chunk.css.map"
+    "static/css/main.96bfff51.chunk.css.map": "/RoboFriends/static/css/main.96bfff51.chunk.css.map"
   }
 }
