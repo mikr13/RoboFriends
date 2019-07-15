@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import { setSearchField, requestRobots } from "../redux/actions";
@@ -81,8 +82,9 @@ class Main extends Component {
             <Search searchChange={onSearchChange} />
             <Scroll>
               <Router>
-                <Route path="/" render={props => <Card {...props} robots={filterRobots} number={this.state.number} />} />
-                <Route path="/Robot/:robotID" render={props => <CardDetail {...props} robots={filterRobots} number={this.state.number}/>} />
+                <Route exact path="/" render={props => <Card {...props} robots={filterRobots} number={this.state.number} />} />
+                <Route exact path="/Robot/:robotID" render={props => <CardDetail {...props} robots={filterRobots} number={this.state.number}/>} />
+                <Router render={() => <Redirect to="/" />}/>
               </Router>
             </Scroll>
           </ErrorBoundary>

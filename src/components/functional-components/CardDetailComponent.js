@@ -5,9 +5,9 @@ const CardDetail = ({match, number, robots}) => {
   if (!robots.length) {
     return <Redirect to={'/'}/>
   }
-  let choice = match.params.robotID;
-  if (choice > 0 && choice < 11) {
-    let robot = robots[choice - 1];
+  let id = parseInt(match.params.robotID, 10);
+  if (id > 0 && id < 11) {
+    let robot = robots.find(el => el.id === id);
     return (
       <div className="container">
         <div
@@ -16,7 +16,6 @@ const CardDetail = ({match, number, robots}) => {
         >
           <div className="tc">
             <img
-              className="w-100"
               alt={robot.name}
               src={`https://robohash.org/${
                 robot.id
