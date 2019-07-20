@@ -12,6 +12,12 @@ const CardDetail = ({ match, number, robots, onFav, favs }) => {
   if (id > 0 && id < 11) {
     let robot = robots.find(el => el.id === id);
     let favSelected = favs.includes(robot.id) ? true : false;
+    
+    const handleClick = () => {
+      onFav(robot.id);
+      favSelected = true;
+    };
+
     return (
       <div className="container">
         <div
@@ -50,7 +56,7 @@ const CardDetail = ({ match, number, robots, onFav, favs }) => {
           <div className="icon-space">
             {favSelected ?<FontAwesomeIcon icon={["fas", "heart"]} size="lg" style={{ color: "red" }} transform="grow-2.5"/> : <FontAwesomeIcon
               icon={["far", "heart"]}
-              style={{ color: "red" }} onClick={onFav.bind(this, robot.id)}
+              style={{ color: "red" }} onClick={handleClick}
             />}
           </div>
         </div>

@@ -58,6 +58,7 @@ class Main extends Component {
       existingFavs.push(id);
     }
     localStorage.setItem('favs', JSON.stringify(existingFavs));
+    this.props.onRequestFav();
   }
 
   render() {

@@ -6,9 +6,6 @@ import {
     requestFavs
  } from './constants.redux';
 
-const items = localStorage.getItem('favs');
-let cachedFav = items === undefined || items === null || !Array.isArray(JSON.parse(items)) ? [] : JSON.parse(items);
-
 export const setSearchField = (text) => ({
     type: changeSearchField,
     payload: text
@@ -23,5 +20,7 @@ export const requestRobots = () => (dispath) => {
 };
 
 export const requestFav = () => (dispath) => {
+    const items = localStorage.getItem('favs');
+    let cachedFav = items === undefined || items === null || !Array.isArray(JSON.parse(items)) ? [] : JSON.parse(items);
     dispath({ type: requestFavs, payload: cachedFav})
 }
