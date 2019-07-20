@@ -33,11 +33,11 @@ const Card = props => {
   });
 
   return (
-    <div>
+    <React.Fragment>
         <div className="w-90 tc" style={{ margin: "0 auto" }}>
           {robots}
         </div>
-    </div>
+    </React.Fragment>
   );
 };
 
