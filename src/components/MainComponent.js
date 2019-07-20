@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import {
   BrowserRouter as Router,
   Route,
-  Redirect
+  Redirect,
+  Switch
 } from "react-router-dom";
 
 import { setSearchField, requestRobots, requestFav } from "../redux/actions";
@@ -92,15 +93,17 @@ class Main extends Component {
       return (
         <div className="pa2">
           <ErrorBoundary>
-            <Header isPending={isPending} title={title} />
-            <Search searchChange={onSearchChange} />
-            <Scroll>
-              <Router>
-                <Route exact path="/" render={props => <Card {...props} robots={filterRobots} number={this.state.number} />} />
-                <Route exact path="/Robot/:robotID" render={props => <CardDetail {...props} robots={filterRobots} number={this.state.number} onFav={this.onFav} favs={favs}/>} />
-                <Router render={() => <Redirect to="/" />}/>
-              </Router>
-            </Scroll>
+            <Router>
+              <Header isPending={isPending} title={title} />
+              <Search searchChange={onSearchChange} />
+              <Scroll>
+                  <Switch>
+                    <Route exact path="/" render={props => <Card {...props} robots={filterRobots} number={this.state.number} />} />
+                    <Route exact path="/Robot/:robotID" render={props => <CardDetail {...props} robots={filterRobots} number={this.state.number} onFav={this.onFav} favs={favs}/>} />
+                    <Route render={() => <Redirect to="/" />}/>
+                  </Switch>
+              </Scroll>
+            </Router>
           </ErrorBoundary>
         </div>
       );
