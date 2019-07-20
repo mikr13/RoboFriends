@@ -2,8 +2,12 @@ import {
     changeSearchField,
     requestRobots_Pending,
     requestRobots_Success,
-    requestRobots_Failed
+    requestRobots_Failed,
+    requestFavs
  } from './constants.redux';
+
+const items = localStorage.getItem('favs');
+let cachedFav = items === undefined || items === null || !Array.isArray(JSON.parse(items)) ? [] : JSON.parse(items);
 
 export const setSearchField = (text) => ({
     type: changeSearchField,
@@ -17,3 +21,7 @@ export const requestRobots = () => (dispath) => {
         .then(data => dispath({ type: requestRobots_Success, payload: data }))
         .catch(error => dispath({ type: requestRobots_Failed, payload: error }));
 };
+
+export const requestFav = () => (dispath) => {
+    dispath({ type: requestFavs, payload: cachedFav})
+}

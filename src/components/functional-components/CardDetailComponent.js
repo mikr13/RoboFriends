@@ -1,13 +1,17 @@
 import React from "react";
-import { Redirect } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const CardDetail = ({match, number, robots}) => {
+const CardDetail = ({ match, number, robots, onFav, favs }) => {
   if (!robots.length) {
-    return <Redirect to={'/'}/>
+    return <Redirect to={"/"} />;
   }
+
   let id = parseInt(match.params.robotID, 10);
+
   if (id > 0 && id < 11) {
     let robot = robots.find(el => el.id === id);
+    let favSelected = favs.includes(robot.id) ? true : false;
     return (
       <div className="container">
         <div
@@ -43,6 +47,12 @@ const CardDetail = ({match, number, robots}) => {
             }. He owns a nice website `}
             <span className="underline">{`${robot.website}</span>`}`</span>
           </p>
+          <div className="icon-space">
+            {favSelected ?<FontAwesomeIcon icon={["fas", "heart"]} size="lg" style={{ color: "red" }} transform="grow-2.5"/> : <FontAwesomeIcon
+              icon={["far", "heart"]}
+              style={{ color: "red" }} onClick={onFav.bind(this, robot.id)}
+            />}
+          </div>
         </div>
       </div>
     );

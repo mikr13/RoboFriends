@@ -26,3 +26,13 @@
     -ms-border-radius: 0.5rem;
     -o-border-radius: 0.5rem;
 }
+
+.icon-space {
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+.icon-space * {
+    cursor: pointer;
+}

@@ -2,7 +2,8 @@ import {
     changeSearchField,
     requestRobots_Pending,
     requestRobots_Success,
-    requestRobots_Failed
+    requestRobots_Failed,
+    requestFavs
  } from './constants.redux';
 
 export const initialState = {
@@ -37,3 +38,16 @@ export const requestRobotsReducer = (state = initialStateforRobots, action = {})
             return state;
     }
 };
+
+export const initialStateforFavs = {
+    favs: []
+}
+
+export const requestFavReducer = (state = initialStateforFavs, action = {}) => {
+    switch(action.type) {
+        case requestFavs:
+            return Object.assign({}, state, { favs: action.payload })
+        default:
+            return state;
+    }
+}

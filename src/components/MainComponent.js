@@ -6,7 +6,7 @@ import {
   Redirect
 } from "react-router-dom";
 
-import { setSearchField, requestRobots } from "../redux/actions";
+import { setSearchField, requestRobots, requestFav } from "../redux/actions";
 
 import "../component-styles/MainComponentStyle.css";
 
@@ -21,6 +21,7 @@ const mapStateToProps = state => {
   return {
     search: state.searchARobot.search,
     robots: state.requestRobotsReducer.robots,
+    favs: state.requestFavReducer.favs,
     isPending: state.requestRobotsReducer.isPending,
     error: state.requestRobotsReducer.error
   };
@@ -29,7 +30,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onSearchChange: event => dispatch(setSearchField(event.target.value)),
-    onRequestRobots: () => dispatch(requestRobots())
+    onRequestRobots: () => dispatch(requestRobots()),
+    onRequestFav: () => dispatch(requestFav())
   };
 };
 
@@ -45,12 +47,23 @@ class Main extends Component {
 
   componentDidMount() {
     this.props.onRequestRobots();
+    this.props.onRequestFav();
+  }
+
+  onFav = (id) => {
+    let existingFavs = JSON.parse(localStorage.getItem('favs'));
+    if (existingFavs === null || existingFavs === undefined || !Array.isArray(existingFavs)) {
+      existingFavs = [id];
+    } else if (!existingFavs.includes(id)) {
+      existingFavs.push(id);
+    }
+    localStorage.setItem('favs', JSON.stringify(existingFavs));
   }
 
   render() {
     const { loading, title } = this.state;
 
-    const { robots, search, onSearchChange, isPending, error } = this.props;
+    const { robots, search, onSearchChange, isPending, error, favs } = this.props;
 
     const filterRobots = robots.filter(robot => {
       return robot.name.toLowerCase().includes(search.toLowerCase());
@@ -83,7 +96,7 @@ class Main extends Component {
             <Scroll>
               <Router>
                 <Route exact path="/" render={props => <Card {...props} robots={filterRobots} number={this.state.number} />} />
-                <Route exact path="/Robot/:robotID" render={props => <CardDetail {...props} robots={filterRobots} number={this.state.number}/>} />
+                <Route exact path="/Robot/:robotID" render={props => <CardDetail {...props} robots={filterRobots} number={this.state.number} onFav={this.onFav} favs={favs}/>} />
                 <Router render={() => <Redirect to="/" />}/>
               </Router>
             </Scroll>

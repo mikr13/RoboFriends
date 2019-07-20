@@ -7,6 +7,7 @@ import { ConfigureStore } from './redux/configureStore';
 
 import './index.css';
 import 'tachyons';
+import './components/functional-components/fontawesomelibrary';
 
 import Main from './components/MainComponent';
 
