@@ -17,6 +17,7 @@ import Card from "./functional-components/CardComponent";
 import Scroll from "./functional-components/ScrollComponent";
 import Header from "./functional-components/HeaderComponent";
 import CardDetail from "./functional-components/CardDetailComponent";
+import SimpleMap from "./functional-components/MapComponent";
 
 const mapStateToProps = state => {
   return {
@@ -100,6 +101,7 @@ class Main extends Component {
                   <Switch>
                     <Route exact path="/" render={props => <Card {...props} robots={filterRobots} number={this.state.number} />} />
                     <Route exact path="/Robot/:robotID" render={props => <CardDetail {...props} robots={filterRobots} number={this.state.number} onFav={this.onFav} favs={favs}/>} />
+                    <Route exact path="/Robot/locateOnMap/:username/:lat/:lng" component={SimpleMap} />
                     <Route render={() => <Redirect to="/" />}/>
                   </Switch>
               </Scroll>

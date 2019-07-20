@@ -1,18 +1,15 @@
 import React from "react";
-import {
-  Link
-} from "react-router-dom";
 
 import "../../component-styles/CardComponentStyle.css";
 
 const Card = props => {
+  const handleClick = (id) => {
+    props.history.push(`Robot/${id}`);
+  };
+
   const robots = props.robots.map(robot => {
     return (
-      <Link
-        key={robot.id}
-        to={`Robot/${robot.id}`}
-      >
-        <div className="bg-washed-green dib br3 pa2 mv3 mh2 grow bw1 shadow-5 bg-animate hover-bg-light-green">
+        <div key={robot.id} className="bg-washed-green dib br3 pa2 mv3 mh2 grow bw1 shadow-5 bg-animate hover-bg-light-green" onClick={handleClick.bind(this, robot.id)}>
           <img
             className="w-100"
             alt={robot.name}
@@ -28,7 +25,6 @@ const Card = props => {
             </p>
           </div>
         </div>
-      </Link>
     );
   });
 

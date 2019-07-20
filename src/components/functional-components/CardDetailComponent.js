@@ -1,8 +1,9 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactTooltip from 'react-tooltip';
 
-const CardDetail = ({ match, number, robots, onFav, favs }) => {
+const CardDetail = ({ match, number, robots, onFav, favs, history }) => {
   if (!robots.length) {
     return <Redirect to={"/"} />;
   }
@@ -54,12 +55,15 @@ const CardDetail = ({ match, number, robots, onFav, favs }) => {
             <span className="underline">{`${robot.website}</span>`}`</span>
           </p>
           <div className="icon-space">
-            {favSelected ?<FontAwesomeIcon icon={["fas", "heart"]} size="lg" style={{ color: "red" }} transform="grow-2.5"/> : <FontAwesomeIcon
+            <FontAwesomeIcon icon={["fas", "arrow-left"]} onClick={() => {history.goBack();}} data-tip="Go back" />
+            {favSelected ? <FontAwesomeIcon icon={["fas", "heart"]} size="lg" style={{ color: "red" }} transform="grow-2.5" data-tip="Already Favourite" /> : <FontAwesomeIcon
               icon={["far", "heart"]}
-              style={{ color: "red" }} onClick={handleClick}
+              style={{ color: "red" }} onClick={handleClick} data-tip="Add to Favourite"
             />}
+            <FontAwesomeIcon icon={["fas", "map-marked-alt"]} onClick={() => {history.push(`locateOnMap/${robot.username}/${robot.address.geo.lat}/${robot.address.geo.lng}`);}} data-tip="Find him on map" />
           </div>
         </div>
+        <ReactTooltip />
       </div>
     );
   } else {
