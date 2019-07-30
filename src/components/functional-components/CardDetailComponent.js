@@ -52,7 +52,7 @@ const CardDetail = ({ match, number, robots, onFav, favs, history }) => {
             {`. He currently works at ${
               robot.company.name
             }. He owns a nice website `}
-            <span className="underline">{`${robot.website}</span>`}`</span>
+            <span className="underline">{`${robot.website}`}`</span>
           </p>
           <div className="icon-space">
             <FontAwesomeIcon icon={["fas", "arrow-left"]} onClick={() => {history.goBack();}} data-tip="Go back" />
